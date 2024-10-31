@@ -22,10 +22,7 @@ public class Tweener : MonoBehaviour
         waypoints = new Vector3[4];
         float distance = 16f; 
 
-        waypoints[0] = transform.position + Vector3.right * distance; 
-        waypoints[1] = waypoints[0] + Vector3.down * distance/5*4; 
-        waypoints[2] = waypoints[1] + Vector3.left * distance; 
-        waypoints[3] = waypoints[2] + Vector3.up * distance/5*4; 
+       
     }
 
     public bool AddTween(Transform targetObject, Vector3 startPos, Vector3 endPos, float duration)
@@ -59,7 +56,7 @@ public class Tweener : MonoBehaviour
         if (activeTween == null)
         {
             Vector3 startPos = transform.position;
-            Vector3 endPos = waypoints[currentWaypoint];
+            Vector3 endPos = startPos;
             float duration = Vector3.Distance(startPos, endPos) / speed;
             activeTween = new Tween(transform, startPos, endPos, Time.time, duration);
 
