@@ -26,8 +26,6 @@ public class IntroMusic : MonoBehaviour
         
         Intro.Play();
         yield return new WaitForSeconds(Intro.clip.length);
-        playMusic();
-
     }
 
     // Update is called once per frame
