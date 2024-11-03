@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ButtonLevel1Script : MonoBehaviour
+public class ChangeLevel : MonoBehaviour
 {
     public void ChangeScene(string sceneName)
     {
