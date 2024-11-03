@@ -6,8 +6,10 @@ public class IntroMusic : MonoBehaviour
 {
     [SerializeField] private AudioClip ACIntro;
     [SerializeField] private AudioClip ACBGMMain;
+    [SerializeField] private Canvas canvas;
     private AudioSource Intro;
     private AudioSource BGMMain;
+    
     
     // Start is called before the first frame update
     IEnumerator Start()
@@ -24,13 +26,26 @@ public class IntroMusic : MonoBehaviour
         
         Intro.Play();
         yield return new WaitForSeconds(Intro.clip.length);
-        BGMMain.Play();
+        playMusic();
+
     }
 
     // Update is called once per frame
     void Update()
     {
         if (!BGMMain.isPlaying && !Intro.isPlaying)
+        {
+            playMusic();
+        }
+    }
+
+    void playMusic()
+    {
+        if (canvas!= null)
+        {
+            Intro.Play();
+        }
+        else
         {
             BGMMain.Play();
         }
